@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
+import Frame1
+ from "@/components/Frame1";
 export default function Home() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -10,6 +11,9 @@ export default function Home() {
   };
 
   return (
+    <div className="">
+
+    
     <div className="bg-cover bg-center bg-[url('/images/background.png')]">
 
     
@@ -33,7 +37,11 @@ export default function Home() {
         <div className="sign-up w-[370px] h-[470px] bg-black bg-opacity-50 rounded-[15px] p-[30px] flex flex-col justify-between">
 
           <div className="text w-full h-fit flex flex-col gap-[20px]">
-              <div className="text-3xl text-white tracking-wide">The  Ultimate  Conversation Toolkit. Reveal The True Value Of Being Deliberate.</div>
+              <div className="text-3xl text-white tracking-wide">
+                <div className="font-normal helvetica-bold">
+                The  Ultimate  Conversation Toolkit. 
+                </div>
+                Reveal The True Value Of Being Deliberate.</div>
               <div className="text-base tracking-wider">Identify and extract everything that matters. Discover opportunities in the engagement happening around your organization, audience, and stakeholders.</div>
           </div>
 
@@ -56,6 +64,7 @@ export default function Home() {
     
     </div>
     </div>
-
+    <Frame1></Frame1>
+    </div>
   );
 }

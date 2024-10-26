@@ -6,10 +6,22 @@
   font-family: HelveticaNeue;
   src: url('/app/fonts/HelveticaNeueLight.otf');
 }
+
+@font-face {
+  font-family: HelveticaMedium;
+  src: url('/app/fonts/HelveticaNeueMedium.otf');
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
+
+body {
+  @apply antialiased;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

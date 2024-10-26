@@ -81,10 +81,10 @@ export default function Home() {
         <div className="min-h-screen flex flex-col max-w-screen-2xl px-4 sm:px-6 lg:px-8 mx-auto">
           {/* Centered RevealFx */}
           <div className="flex flex-grow items-center pt-[76px] justify-center">
-            <RevealFx className="w-full max-w-md" speed="medium" delay={0} translateY={0}>
-              <div className="bg-black bg-opacity-50 rounded-2xl p-6 sm:p-8">
+
+              <div className="bg-black bg-opacity-50 rounded-2xl w-full p-6 sm:p-8">
                 <div className="text-white mb-8">
-                  <h1 className="text-2xl sm:text-3xl tracking-wide mb-4">
+                  <h1 className="text-1xl sm:text-2xl tracking-wide mb-4">
                     The Ultimate Conversation Toolkit. Reveal The True Value Of Being Deliberate.
                   </h1>
                   <p className="text-sm sm:text-base tracking-wider">
@@ -92,26 +92,22 @@ export default function Home() {
                     <span className="opacity-80"> Discover opportunities in the engagement happening around your organization, audience, and stakeholders.</span>
                   </p>
                 </div>
-
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email" 
-                    className="px-3 py-2 rounded bg-white bg-opacity-15 border border-white text-sm sm:text-base w-full" 
-                    required 
-                  />
-                  <button 
-                    type="submit" 
-                    className="px-3 py-2 bg-black text-white text-sm sm:text-base rounded hover:bg-opacity-90 transition-colors duration-300"
-                  >
-                    Join Waitlist
+                <div className="flex gap-4 w-full justify-center items-center">
+                  <button className="px-3 py-1 bg-white text-black text-sm sm:text-base rounded transition-colors duration-300">
+                    Inspire Dialogue
                   </button>
-                </form>
+                  <button className="px-3 py-1 border-[.5px] bg-opacity-15 hover:bg-opacity-25 text-sm sm:text-base rounded transition-colors duration-300">
+                    Listen For Details
+                  </button>
+                  <button className="px-3 py-1 border-[.5px] bg-opacity-15 hover:bg-opacity-25 text-sm sm:text-base rounded transition-colors duration-300">
+                    See The Big Picture
+                  </button>
+                </div>
               </div>
-            </RevealFx>
+
           </div>
 
-          <footer className="py-6 flex justify-between items-center">
+          <footer className="py-6 opacity-0 flex justify-between items-center">
             <button className="px-3 py-1 bg-white bg-opacity-15 hover:bg-opacity-25 text-sm sm:text-base rounded transition-colors duration-300">
               Features
             </button>

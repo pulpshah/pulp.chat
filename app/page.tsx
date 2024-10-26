@@ -18,7 +18,7 @@ export default function Home() {
       <div className="nav min-w-[290px] flex justify-between w-full items-center">
 
         <Link href={'/'}>
-        <Image  src={'/images/logo.svg'} height={8} width={68}></Image>
+        <Image src={'/images/logo.svg'} height={8} width={68} alt="Logo" /> {/* Added alt attribute */}
         </Link>
 
 

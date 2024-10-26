@@ -1,79 +1,76 @@
-"use client"; // Add this line to make the component a client component
-import { RevealFx } from "./once-ui/components";
-import Image from "next/image";
-import Link from "next/link";
-import Frame1
- from "@/components/Frame1";
+'use client'
+
+import { RevealFx } from "./once-ui/components"
+import Image from "next/image"
+import Link from "next/link"
+import Frame1 from "@/components/Frame1"
+
 export default function Home() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    alert('Meet you at your inbox!'); // Replace this with your actual submission logic
-  };
+    e.preventDefault()
+    alert('Meet you at your inbox!') // Replace this with your actual submission logic
+  }
 
   return (
-    <div className="">
+    <div className="flex flex-col min-h-screen ">
+      <div className="bg-cover bg-center bg-[url('/images/background.png')] flex-grow">
+        <div className="min-h-screen flex  flex-col max-w-screen-2xl px-4 sm:px-6 lg:px-8 mx-auto">
+          <nav className="py-6 flex justify-between items-center">
+            <Link href={'/'}>
+              <Image src={'/images/logo.svg'} height={8} width={68} alt="Logo" />
+            </Link>
+            <div className="flex gap-4">
+              <button className="px-3 py-1 text-sm sm:text-base rounded transition-opacity">
+                Contact
+              </button>
+              <button className="px-3 py-1 bg-white bg-opacity-15 hover:bg-opacity-25 text-sm sm:text-base rounded transition-colors duration-300">
+                Sign Up
+              </button>
+            </div>
+          </nav>
 
-    
-    <div className="bg-cover bg-center bg-[url('/images/background.png')]">
+          {/* Centered RevealFx */}
+          <div className="flex flex-grow items-center justify-center">
+            <RevealFx className="w-full max-w-md" speed="medium" delay={0} translateY={0}>
+              <div className="bg-black bg-opacity-50 rounded-2xl p-6 sm:p-8">
+                <div className="text-white mb-8">
+                  <h1 className="text-2xl sm:text-3xl tracking-wide mb-4">
+                    The Ultimate Conversation Toolkit. Reveal The True Value Of Being Deliberate.
+                  </h1>
+                  <p className="text-sm sm:text-base tracking-wider">
+                    Identify and extract everything that matters. 
+                    <span className="opacity-80"> Discover opportunities in the engagement happening around your organization, audience, and stakeholders.</span>
+                  </p>
+                </div>
 
-    
-    <div className="min-h-screen flex-col max-w-[1700px] p-[20px] mx-auto flex justify-start items-center h-screen">
-
-      <div className="nav min-w-[290px] flex justify-between w-full items-center">
-
-        <Link href={'/'}>
-        <Image src={'/images/logo.svg'} height={8} width={68} alt="Logo" /> {/* Added alt attribute */}
-        </Link>
-
-
-        <div className="buttons flex gap-[20px]">
-        <button className="px-[12px] py-[4px]  bg-opacity-15 hover:bg-opacity-25 text-lg rounded-[5px] transition-opacity">Contact</button>
-
-          <button className="px-[12px] py-[4px] bg-white bg-opacity-15 hover:bg-opacity-25 text-lg rounded-[5px] transition-colors duration-300">Sign Up</button>
-        </div>
-      </div>
-
-      
-      <RevealFx className=" w-full h-full my-[20px] "
-                        speed="medium"
-                        delay={0}
-                        translateY={0}
-                        >
-      <div className="card flex min-h-[470px] justify-center items-center w-full h-full">
-        <div className="sign-up w-[370px] h-[470px] bg-black bg-opacity-50 rounded-[15px] p-[30px] flex flex-col justify-between">
-
-          <div className="text w-full h-fit flex flex-col gap-[20px]">
-              <div className="text-3xl text-white tracking-wide">
-                
-                The  Ultimate  Conversation Toolkit. 
-                Reveal The True Value Of Being Deliberate.</div>
-              <div className="text-base tracking-wider">
-                Identify and extract everything that matters. 
-                <span className="opacity-80"> Discover opportunities in the engagement happening around your organization, audience, and stakeholders.</span>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    className="px-3 py-2 rounded bg-white bg-opacity-15 border border-white text-sm sm:text-base w-full" 
+                    required 
+                  />
+                  <button 
+                    type="submit" 
+                    className="px-3 py-2 bg-black text-white text-sm sm:text-base rounded hover:bg-opacity-90 transition-colors duration-300"
+                  >
+                    Join Waitlist
+                  </button>
+                </form>
               </div>
+            </RevealFx>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-[10px]">
-              <input type="email" placeholder="Enter your email" className="px-[12px] py-[4px] rounded-[5px] bg-white bg-opacity-15 border-[.5px] border-white text-lg" required />
-              <button type="submit" className="px-[12px] py-[6px] bg-black text-lg rounded-[5px] ">Join Waitlist</button>
-          </form>
-
+          <footer className="py-6 flex justify-between items-center">
+            <button className="px-3 py-1 bg-white bg-opacity-15 hover:bg-opacity-25 text-sm sm:text-base rounded transition-colors duration-300">
+              Features
+            </button>
+            <button className="px-3 py-1 bg-white bg-opacity-15 hover:bg-opacity-25 text-sm sm:text-base rounded transition-colors duration-300">
+              Scroll to Bottom
+            </button>
+          </footer>
         </div>
       </div>
-        </RevealFx>
-
-    <div className="footer min-w-[278px] flex justify-between w-full">
-
-    <button className="px-[12px] py-[4px] bg-white bg-opacity-15 hover:bg-opacity-25 text-lg rounded-[5px] transition-colors duration-300">Features</button>
-
-
-
-          <button className="px-[12px] py-[4px] bg-white bg-opacity-15 hover:bg-opacity-25 text-lg rounded-[5px] transition-colors duration-300">Scroll to Bottom</button>
-        </div>
-    
     </div>
-    </div>
-    <Frame1></Frame1>
-    </div>
-  );
+  )
 }

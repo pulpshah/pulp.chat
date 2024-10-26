@@ -34,7 +34,7 @@ export default function Home() {
       <div className="bg-cover bg-center bg-[url('/images/background.png')] flex-grow "> 
         <div className="min-h-screen flex flex-col max-w-screen-2xl px-4 sm:px-6 lg:px-8 mx-auto">
           {/* Centered RevealFx */}
-          <div className="flex flex-grow items-center justify-center">
+          <div className="flex flex-grow items-center pt-[76px] justify-center">
             <RevealFx className="w-full max-w-md" speed="medium" delay={0} translateY={0}>
               <div className="bg-black bg-opacity-50 rounded-2xl p-6 sm:p-8">
                 <div className="text-white mb-8">
@@ -80,7 +80,7 @@ export default function Home() {
       <div className="bg-cover bg-center bg-[#101010] flex-grow "> 
         <div className="min-h-screen flex flex-col max-w-screen-2xl px-4 sm:px-6 lg:px-8 mx-auto">
           {/* Centered RevealFx */}
-          <div className="flex flex-grow items-center justify-center">
+          <div className="flex flex-grow items-center pt-[76px] justify-center">
             <RevealFx className="w-full max-w-md" speed="medium" delay={0} translateY={0}>
               <div className="bg-black bg-opacity-50 rounded-2xl p-6 sm:p-8">
                 <div className="text-white mb-8">

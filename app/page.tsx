@@ -17,7 +17,7 @@ export default function Home() {
     <div className="bg-cover bg-center bg-[url('/images/background.png')]">
 
     
-    <div className="min-h-screen flex-col max-w-[1800px] p-[20px] mx-auto flex justify-start items-center h-screen">
+    <div className="min-h-screen flex-col max-w-[1700px] p-[20px] mx-auto flex justify-start items-center h-screen">
 
       <div className="nav min-w-[290px] flex justify-between w-full items-center">
 
@@ -26,7 +26,7 @@ export default function Home() {
         </Link>
 
 
-        <div className="buttons flex gap-[24px]">
+        <div className="buttons flex gap-[20px]">
         <button className="px-[12px] py-[4px]  bg-opacity-15 hover:bg-opacity-25 text-lg rounded-[5px] transition-opacity">Contact</button>
 
           <button className="px-[12px] py-[4px] bg-white bg-opacity-15 hover:bg-opacity-25 text-lg rounded-[5px] transition-colors duration-300">Sign Up</button>
@@ -38,11 +38,12 @@ export default function Home() {
 
           <div className="text w-full h-fit flex flex-col gap-[20px]">
               <div className="text-3xl text-white tracking-wide">
-                <div className="font-normal helvetica-bold">
                 The  Ultimate  Conversation Toolkit. 
-                </div>
                 Reveal The True Value Of Being Deliberate.</div>
-              <div className="text-base tracking-wider">Identify and extract everything that matters. Discover opportunities in the engagement happening around your organization, audience, and stakeholders.</div>
+              <div className="text-base tracking-wider">
+                Identify and extract everything that matters. 
+                <span className="opacity-80"> Discover opportunities in the engagement happening around your organization, audience, and stakeholders.</span>
+              </div>
           </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-[10px]">

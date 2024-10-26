@@ -1,5 +1,5 @@
 "use client"; // Add this line to make the component a client component
-
+import { RevealFx } from "./once-ui/components";
 import Image from "next/image";
 import Link from "next/link";
 import Frame1
@@ -33,11 +33,18 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="card flex min-h-[470px] my-[20px] justify-center items-center w-full h-full">
+      
+      <RevealFx className=" w-full h-full my-[20px] "
+                        speed="medium"
+                        delay={0}
+                        translateY={0}
+                        >
+      <div className="card flex min-h-[470px] justify-center items-center w-full h-full">
         <div className="sign-up w-[370px] h-[470px] bg-black bg-opacity-50 rounded-[15px] p-[30px] flex flex-col justify-between">
 
           <div className="text w-full h-fit flex flex-col gap-[20px]">
               <div className="text-3xl text-white tracking-wide">
+                
                 The  Ultimate  Conversation Toolkit. 
                 Reveal The True Value Of Being Deliberate.</div>
               <div className="text-base tracking-wider">
@@ -53,6 +60,7 @@ export default function Home() {
 
         </div>
       </div>
+        </RevealFx>
 
     <div className="footer min-w-[278px] flex justify-between w-full">
 

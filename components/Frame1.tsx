@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Flex, RevealFx, Text, Button } from '@/app/once-ui/components'
 const Frame1 = () => {
   return (
     <div className="bg-white bg-gradient-to-b from-[#e169ff15] to-transparent">
@@ -15,9 +15,10 @@ const Frame1 = () => {
                 <div className="feature flex items-center justify-center h-3/4 w-full bg-black bg-opacity-10 rounded-[15px] ">
                         <div className="categories w-full gap-[20px] flex justify-center">
                             <div className="px-[12px] py-[4px] bg-black bg-opacity-50  text-lg rounded-[5px] transition-colors duration-300 inline-block">Inspire Dialogue</div>
-                            <div className="px-[12px] py-[4px] bg-black bg-opacity-50  text-lg rounded-[5px] transition-colors duration-300 inline-block">Listen For Details</div>
-                            <div className="px-[12px] py-[4px] bg-black bg-opacity-50  text-lg rounded-[5px] transition-colors duration-300 inline-block">See The Big Picture</div>
+                            <div className="px-[12px] py-[4px] bg-black bg-opacity-25  text-lg rounded-[5px] transition-colors duration-300 inline-block">Listen For Details</div>
+                            <div className="px-[12px] py-[4px] bg-black bg-opacity-25  text-lg rounded-[5px] transition-colors duration-300 inline-block">See The Big Picture</div>
                         </div>
+
                 </div>
             </div>
         </div>

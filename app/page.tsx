@@ -209,7 +209,7 @@ export default function Home() {
                 {activeTab === 0 && (
                   <div className="flex max-w-[800px] mx-auto justify-center">
                     <video 
-                      ref={(el) => (videoRefs.current[0] = el)} // Attach ref for the first video
+                      ref={(el) => { videoRefs.current[0] = el; }} // Attach ref for the first video
                       className="rounded-xl shadow-white" 
                       loop 
                       muted 
@@ -224,7 +224,7 @@ export default function Home() {
                 {activeTab === 1 && (
                   <div className="flex max-w-[800px] mx-auto justify-center">
                     <video 
-                      ref={(el) => (videoRefs.current[1] = el)} // Attach ref for the second video
+                      ref={(el) => { videoRefs.current[1] = el; }} // Attach ref for the second video
                       className="rounded-xl shadow-white" 
                       loop 
                       muted 
@@ -238,7 +238,7 @@ export default function Home() {
                 )}
                 {activeTab === 2 && <div className="flex max-w-[800px] mx-auto justify-center">
                     <video 
-                      ref={(el) => (videoRefs.current[1] = el)} // Attach ref for the second video
+                      ref={(el) => { videoRefs.current[1] = el; }} // Attach ref for the second video
                       className="rounded-xl shadow-white" 
                       loop 
                       muted 

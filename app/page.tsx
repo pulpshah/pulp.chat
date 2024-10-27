@@ -11,7 +11,7 @@ export default function Home() {
   const [highlightedTabs, setHighlightedTabs] = useState(new Set([0]))
   const [inDemoSection, setInDemoSection] = useState(false)
   const demoSectionRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null) // Create a ref for the video
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]) // Array of refs
 
   const tabs = ["Tab1", "Tab2", "Tab3"]
   const tabChangeDelay = 80 // Delay in milliseconds
@@ -69,35 +69,37 @@ export default function Home() {
     }
   }, [])
 
-  // Observe if the video is in the viewport
+  // Observe if videos are in the viewport
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (videoRef.current) {
-          if (entry.isIntersecting) {
-            videoRef.current.play() // Play video when in view
-          } else {
-            videoRef.current.pause() // Pause video when out of view
-          }
-        }
-      },
-      { threshold: 0.5 } // Trigger when at least 50% of the video is visible
-    )
+    const observers: IntersectionObserver[] = []
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current)
-    }
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              video.play() // Play video when in view
+            } else {
+              video.pause() // Pause video when out of view
+            }
+          },
+          { threshold: 0.5 } // Trigger when at least 50% of the video is visible
+        )
+        observer.observe(video)
+        observers.push(observer)
+      }
+    })
 
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current)
-      }
+      observers.forEach((observer, index) => {
+        if (videoRefs.current[index]) {
+          observer.unobserve(videoRefs.current[index]!)
+        }
+      })
     }
-  }, [])
+  }, [activeTab])
 
   // Add scroll event listener
-
-
   const handleTabChange = (tabIndex: number) => {
     setActiveTab(tabIndex)
   }
@@ -180,7 +182,7 @@ export default function Home() {
             <div className="bg-black bg-opacity-50 rounded-2xl w-full p-6 sm:p-8">
               <div className="text-white mb-8">
                 <h1 className="text-1xl sm:text-2xl tracking-wide mb-4">
-                AI Powered All In One Conversation Management System
+                  AI Powered All In One Conversation Management System
                 </h1>
                 <p className="text-sm sm:text-base tracking-wider">
                   Identify and extract everything that matters. 
@@ -188,26 +190,26 @@ export default function Home() {
                 </p>
               </div>
               
-        {/* Update the tabs rendering logic */}
-        <div className="flex gap-4 w-full justify-center items-center">
-          {tabs.map((tab, index) => (
-            <button
-              key={index}
-              onClick={() => handleTabChange(index)}
-              className={`px-3 py-1 rounded text-sm sm:text-base transition-colors duration-800 ${
-                activeTab === index ? "bg-white text-black" : "bg-opacity-15 border"
-              }`}
-            >
-              {tab === "Tab1" ? "Inspire Dialogue" : tab === "Tab2" ? "Listen For Details" : "See The Big Picture"}
-            </button>
-          ))}
-        </div>
+              {/* Update the tabs rendering logic */}
+              <div className="flex gap-4 w-full justify-center items-center">
+                {tabs.map((tab, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleTabChange(index)}
+                    className={`px-3 py-1 rounded text-sm sm:text-base transition-colors duration-800 ${
+                      activeTab === index ? "bg-white text-black" : "bg-opacity-15 border"
+                    }`}
+                  >
+                    {tab === "Tab1" ? "Inspire Dialogue" : tab === "Tab2" ? "Listen For Details" : "See The Big Picture"}
+                  </button>
+                ))}
+              </div>
 
               <div className="tabs mt-8">
                 {activeTab === 0 && (
                   <div className="flex max-w-[800px] mx-auto justify-center">
                     <video 
-                      ref={videoRef} // Attach the ref to the video element
+                      ref={(el) => (videoRefs.current[0] = el)} // Attach ref for the first video
                       className="rounded-xl shadow-white" 
                       loop 
                       muted 
@@ -219,9 +221,24 @@ export default function Home() {
                     </video>
                   </div>
                 )}
-                {activeTab === 1 &&                   <div className="flex max-w-[800px] mx-auto justify-center">
+                {activeTab === 1 && (
+                  <div className="flex max-w-[800px] mx-auto justify-center">
                     <video 
-                      ref={videoRef} // Attach the ref to the video element
+                      ref={(el) => (videoRefs.current[1] = el)} // Attach ref for the second video
+                      className="rounded-xl shadow-white" 
+                      loop 
+                      muted 
+                      autoPlay
+                      preload="metadata"
+                    >
+                      <source src="/demovids/2.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                )}
+                {activeTab === 2 && <div className="flex max-w-[800px] mx-auto justify-center">
+                    <video 
+                      ref={(el) => (videoRefs.current[1] = el)} // Attach ref for the second video
                       className="rounded-xl shadow-white" 
                       loop 
                       muted 
@@ -232,7 +249,6 @@ export default function Home() {
                       Your browser does not support the video tag.
                     </video>
                   </div>}
-                {activeTab === 2 && <h1 className="text-1xl sm:text-2xl tracking-wide mb-4">Content for Tab 3</h1>}
               </div>
             </div>
           </div>

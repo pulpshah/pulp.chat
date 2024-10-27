@@ -219,7 +219,19 @@ export default function Home() {
                     </video>
                   </div>
                 )}
-                {activeTab === 1 && <h1 className="text-1xl sm:text-2xl tracking-wide mb-4">Content for Tab 2</h1>}
+                {activeTab === 1 &&                   <div className="flex max-w-[800px] mx-auto justify-center">
+                    <video 
+                      ref={videoRef} // Attach the ref to the video element
+                      className="rounded-xl shadow-white" 
+                      loop 
+                      muted 
+                      autoPlay
+                      preload="metadata"
+                    >
+                      <source src="/demovids/2.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>}
                 {activeTab === 2 && <h1 className="text-1xl sm:text-2xl tracking-wide mb-4">Content for Tab 3</h1>}
               </div>
             </div>

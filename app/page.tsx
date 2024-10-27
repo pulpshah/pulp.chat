@@ -11,6 +11,7 @@ export default function Home() {
   const [highlightedTabs, setHighlightedTabs] = useState(new Set([0]))
   const [inDemoSection, setInDemoSection] = useState(false)
   const demoSectionRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null) // Create a ref for the video
 
   const tabs = ["Tab1", "Tab2", "Tab3"]
   const tabChangeDelay = 80 // Delay in milliseconds
@@ -64,6 +65,32 @@ export default function Home() {
     return () => {
       if (demoSectionRef.current) {
         observer.unobserve(demoSectionRef.current)
+      }
+    }
+  }, [])
+
+  // Observe if the video is in the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (videoRef.current) {
+          if (entry.isIntersecting) {
+            videoRef.current.play() // Play video when in view
+          } else {
+            videoRef.current.pause() // Pause video when out of view
+          }
+        }
+      },
+      { threshold: 0.5 } // Trigger when at least 50% of the video is visible
+    )
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current)
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current)
       }
     }
   }, [])
@@ -184,8 +211,8 @@ export default function Home() {
                 {activeTab === 0 && (
                   <div className="flex max-w-[800px] mx-auto justify-center">
                     <video 
+                      ref={videoRef} // Attach the ref to the video element
                       className="rounded-xl shadow-white" 
-                      autoPlay 
                       loop 
                       muted 
                       preload="metadata"

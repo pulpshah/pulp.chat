@@ -264,28 +264,15 @@ export default function Home() {
             <div className="bg-black bg-opacity-50 rounded-2xl w-full p-6 sm:p-8">
               <div className="text-white mb-8">
                 <h1 className="text-1xl sm:text-2xl tracking-wide mb-4">
-                  AI Powered All In One Conversation Management System
+                Invite Structured, Meaningful Interactions
                 </h1>
                 <p className="text-sm sm:text-base tracking-wider">
-                  Identify and extract everything that matters. 
-                  <span className="opacity-80">Capture the invisible dynamics within every exchange—clarity, trust, emotion, reasoning, and relevance. We help organizations:</span>
+                Whether in comments, chat or, debate, every conversation deserves clarity. 
+                  <span className="opacity-80"> Personalize voting options and prevent trolls from rising to the top.</span>
                 </p>
               </div>
               
               {/* Update the tabs rendering logic */}
-              <div className="flex gap-4 w-full justify-center items-center">
-                {tabs.map((tab, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleTabChange(index)}
-                    className={`px-3 py-1 rounded text-sm sm:text-base transition-colors duration-800 ${
-                      activeTab === index ? "bg-white text-black" : "bg-opacity-15 border"
-                    }`}
-                  >
-                    {tab === "Tab1" ? "Inspire Dialogue" : tab === "Tab2" ? "Listen For Details" : "See The Big Picture"}
-                  </button>
-                ))}
-              </div>
 
               <div className="tabs mt-8">
                 {activeTab === 0 && (
@@ -303,34 +290,6 @@ export default function Home() {
                     </video>
                   </div>
                 )}
-                {activeTab === 1 && (
-                  <div className="flex max-w-[800px] mx-auto justify-center">
-                    <video 
-                      ref={(el) => { videoRefs.current[1] = el; }} // Attach ref for the second video
-                      className="rounded-xl shadow-white" 
-                      loop 
-                      muted 
-                      autoPlay
-                      preload="metadata"
-                    >
-                      <source src="/demovids/2.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                )}
-                {activeTab === 2 && <div className="flex max-w-[800px] mx-auto justify-center">
-                    <video 
-                      ref={(el) => { videoRefs.current[1] = el; }} // Attach ref for the second video
-                      className="rounded-xl shadow-white" 
-                      loop 
-                      muted 
-                      autoPlay
-                      preload="metadata"
-                    >
-                      <source src="/demovids/2.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>}
               </div>
             </div>
           </div>

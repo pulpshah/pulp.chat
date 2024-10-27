@@ -1,5 +1,5 @@
 'use client'
-
+import { LetterFx } from "./once-ui/components"
 import { RevealFx } from "./once-ui/components"
 import Image from "next/image"
 import Link from "next/link"
@@ -289,6 +289,186 @@ export default function Home() {
                       Your browser does not support the video tag.
                     </video>
                   </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div 
+        className="demos bg-cover bg-center bg-[#101010] flex-grow" 
+        ref={demoSectionRef}
+      > 
+        <div className="min-h-screen flex flex-col max-w-screen-2xl px-4 sm:px-6 lg:px-8 mx-auto">
+          <div className="flex flex-grow items-center pt-[76px] justify-center">
+            <div className="bg-black bg-opacity-50 rounded-2xl w-full p-6 sm:p-8">
+              <div className="text-white mb-8">
+                <h1 className="text-1xl sm:text-2xl tracking-wide mb-4">
+                Upvotes and Downvotes Create Illusions in Your Data
+                </h1>
+                <p className="text-sm sm:text-base tracking-wider">
+                Pulp balances logic with empathy to foster better communication outcomes. 
+                  <span className="opacity-80"> Our tools help to stop the polarization of your audience and customers.</span>
+                </p>
+              </div>
+              
+              {/* Update the tabs rendering logic */}
+
+              <div className="tabs mt-8">
+                {activeTab === 0 && (
+                  <div className="flex max-w-[800px] mx-auto justify-center">
+              <div className="w-[650px] h-[274px] px-5 py-2.5 bg-gradient-to-r from-[#ffcccc] via-[#d1dcff] to-[#daffce] rounded-[10px] shadow justify-between items-center inline-flex">
+                <div className="justify-center items-center gap-[5px] flex">
+                              <span
+                style={{
+                  fontFamily: 'var(--font-family-code)'
+                }}
+              >
+                <LetterFx
+                className="text-black text-lg font-light font-['Helvetica Neue']"
+                  speed="medium"
+                  trigger="hover"
+                  charset={[
+                    'X',
+                    '@',
+                    '$',
+                    'a',
+                    'H',
+                    'z',
+                    'o',
+                    '0',
+                    'y',
+                    '#',
+                    '?',
+                    '*',
+                    '0',
+                    '1',
+                    '+'
+                  ]}
+                >
+                  Invalid
+                  </LetterFx>
+                  </span>
+                  <div className="justify-start items-center gap-2.5 flex">
+                    <div className="w-[19px] h-[19px] relative">
+                      {/* Example SVG */}
+                      <Image src={'/icons/invalid.svg'} height={19} width={19} alt="Logo" />
+                    </div>
+                  </div>
+                </div>
+                <div className="justify-center items-center gap-[5px] flex">
+                <LetterFx
+                className="text-black text-lg font-light font-['Helvetica Neue']"
+                  speed="medium"
+                  trigger="hover"
+                  charset={[
+                    'X',
+                    '@',
+                    '$',
+                    'a',
+                    'H',
+                    'z',
+                    'o',
+                    '0',
+                    'y',
+                    '#',
+                    '?',
+                    '*',
+                    '0',
+                    '1',
+                    '+'
+                  ]}
+                >
+                  Abstain
+                  </LetterFx>
+                  <div className="w-[19px] flex h-[19px] relative">
+                      {/* Example SVG */}
+                      <Image src={'/icons/neutral.svg'} height={19} width={19} alt="Logo" />
+                    </div>
+                </div>
+                <div className="justify-center items-center gap-[5px] flex">
+                <LetterFx
+                className="text-black text-lg font-light font-['Helvetica Neue']"
+                  speed="medium"
+                  trigger="hover"
+                  charset={[
+                    'X',
+                    '@',
+                    '$',
+                    'a',
+                    'H',
+                    'z',
+                    'o',
+                    '0',
+                    'y',
+                    '#',
+                    '?',
+                    '*',
+                    '0',
+                    '1',
+                    '+'
+                  ]}
+                >
+                  Valid
+                  </LetterFx>
+                  <div className="w-[19px] h-[19px] relative">
+                      {/* Example SVG */}
+                      <Image src={'/icons/valid.svg'} height={19} width={19} alt="Logo" />
+                    </div>
+                </div>
+              </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div 
+        className="demos bg-cover bg-center bg-[#101010] flex-grow" 
+        ref={demoSectionRef}
+      > 
+        <div className="min-h-screen flex flex-col max-w-screen-2xl px-4 sm:px-6 lg:px-8 mx-auto">
+          <div className="flex flex-grow items-center pt-[76px] justify-center">
+            <div className="bg-black bg-opacity-50 rounded-2xl w-full p-6 sm:p-8">
+              <div className="text-white mb-8">
+                <h1 className="text-1xl sm:text-2xl tracking-wide mb-4">
+                Engagmenet Data Tells Stories
+                </h1>
+                <p className="text-sm sm:text-base tracking-wider">
+                Pulp combines creativity with clarity to enhance user interactions. 
+                  <span className="opacity-80"> Our custom text effects create engaging experiences, guiding your audience through your message with precision and appeal.</span>
+                </p>
+              </div>
+              
+              {/* Update the tabs rendering logic */}
+
+              <div className="tabs mt-8">
+                {activeTab === 0 && (
+                  <div className="flex max-w-[800px] mx-auto justify-center gap-4 flex-col">
+                    <div className="w-full flex justify-center mb-4 text-lg sm:text-xl">Experience Information</div>
+                    <div className="flex max-w-[800px] mx-auto justify-center gap-4">
+                    <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
+              Sparkle
+            </button> <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
+              Reveal
+            </button> <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
+              Glitch
+            </button>
+                    </div>
+
+                    <div className="flex max-w-[800px] mx-auto justify-center gap-4">
+                    <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
+              Redact
+            </button> <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
+              Soft Glow
+            </button> <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
+              Hard Glow
+            </button>
+                    </div>
+              </div>
                 )}
               </div>
             </div>

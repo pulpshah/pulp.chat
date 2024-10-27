@@ -231,7 +231,7 @@ export default function Home() {
                       autoPlay
                       preload="metadata"
                     >
-                      <source src="/demovids/2.mp4" type="video/mp4" />
+                      <source src="/demovids/3.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -275,7 +275,7 @@ export default function Home() {
               {/* Update the tabs rendering logic */}
 
               <div className="tabs mt-8">
-                {activeTab === 0 && (
+              
                   <div className="flex max-w-[800px] mx-auto justify-center">
                     <video 
                       ref={(el) => { videoRefs.current[0] = el; }} // Attach ref for the first video
@@ -289,7 +289,7 @@ export default function Home() {
                       Your browser does not support the video tag.
                     </video>
                   </div>
-                )}
+                
               </div>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
               {/* Update the tabs rendering logic */}
 
               <div className="tabs mt-8">
-                {activeTab === 0 && (
+                
                   <div className="flex max-w-[800px] mx-auto justify-center">
               <div className="w-[650px] h-[274px] px-5 py-2.5 bg-gradient-to-r from-[#ffcccc] via-[#d1dcff] to-[#daffce] rounded-[10px] shadow justify-between items-center inline-flex">
                 <div className="justify-center items-center gap-[5px] flex">
@@ -419,7 +419,7 @@ export default function Home() {
                 </div>
               </div>
                   </div>
-                )}
+                
               </div>
             </div>
           </div>
@@ -428,14 +428,14 @@ export default function Home() {
 
       <div 
         className="demos bg-cover bg-center bg-[#101010] flex-grow" 
-        ref={demoSectionRef}
+ 
       > 
         <div className="min-h-screen flex flex-col max-w-screen-2xl px-4 sm:px-6 lg:px-8 mx-auto">
           <div className="flex flex-grow items-center pt-[76px] justify-center">
             <div className="bg-black bg-opacity-50 rounded-2xl w-full p-6 sm:p-8">
               <div className="text-white mb-8">
                 <h1 className="text-1xl sm:text-2xl tracking-wide mb-4">
-                Engagmenet Data Tells Stories
+                Engagment Data Tells Stories
                 </h1>
                 <p className="text-sm sm:text-base tracking-wider">
                 Pulp combines creativity with clarity to enhance user interactions. 
@@ -446,7 +446,7 @@ export default function Home() {
               {/* Update the tabs rendering logic */}
 
               <div className="tabs mt-8">
-                {activeTab === 0 && (
+  
                   <div className="flex max-w-[800px] mx-auto justify-center gap-4 flex-col">
                     <div className="w-full flex justify-center mb-4 text-lg sm:text-xl">Experience Information</div>
                     <div className="flex max-w-[800px] mx-auto justify-center gap-4">
@@ -469,7 +469,7 @@ export default function Home() {
             </button>
                     </div>
               </div>
-                )}
+                
               </div>
             </div>
           </div>

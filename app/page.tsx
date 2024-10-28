@@ -100,7 +100,7 @@ export default function Home() {
     }
   }, [activeTab])
 
-  // Add scroll event listener
+  // Add scroll event listeners
   const handleTabChange = (tabIndex: number) => {
     setActiveTab(tabIndex)
   }

@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Frame1 from "@/components/Frame1"
 import { useState, useEffect, useRef } from "react"
+import ExperienceComponent from "@/components/ExperienceComponent"
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0)
@@ -446,29 +447,7 @@ export default function Home() {
               {/* Update the tabs rendering logic */}
 
               <div className="tabs mt-8">
-  
-                  <div className="flex max-w-[800px] mx-auto justify-center gap-4 flex-col">
-                    <div className="w-full flex justify-center mb-4 text-lg sm:text-xl">Experience Information</div>
-                    <div className="flex max-w-[800px] mx-auto justify-center gap-4">
-                    <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
-              Sparkle
-            </button> <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
-              Reveal
-            </button> <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
-              Glitch
-            </button>
-                    </div>
-
-                    <div className="flex max-w-[800px] mx-auto justify-center gap-4">
-                    <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
-              Redact
-            </button> <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
-              Soft Glow
-            </button> <button className="px-3 py-1 text-sm sm:text-base bg-white bg-opacity-15 hover:bg-opacity-25 rounded transition-opacity">
-              Hard Glow
-            </button>
-                    </div>
-              </div>
+                <ExperienceComponent />
                 
               </div>
             </div>
